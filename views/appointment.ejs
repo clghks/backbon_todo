@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div>
+        <input type="checkbox" data-id="1" />Test
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+    <script>
+        // Appointment 라는 클래스를 생성
+        var Appointment = Backbone.Model.extend({});
+
+        // appointment 라는 인스턴스를 생성
+        var appointment = new Appointment({
+            description:'appointmentClass'
+        });
+        // var appointment = new Appointment; 가능 
+
+        // AppointmentView 라는 클래스를 생성
+        var AppointmentView = Backbone.View.extend({
+            // Render 함수를 만들어 봅시다.
+            reander: function(){
+                // 랜더링 한데이터를 적용
+                var html = '<title>' + this.model.get('title') + '</title>'
+                $(this.el).html(html);
+            }
+        });
+
+        console.log(appointment.get('description'));
+
+        // appointmentView 라는 인스턴스를 생성하는데 Model 값에 appointment를 적용
+        var appointmentView = new AppointmentView({
+            model: appointment
+        });
+
+        // Model 에 title 넣기
+        appointment.set({title:'ch1'});
+        console.log(appointment.get('title'));
+
+        appointmentView.reander();
+        console.log(appointmentView.el);
+
+    </script>
+</body>
+</html>
