@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d722a6fe-a3a4-4354-a9e8-a2a887fdf174" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/routes/appointment.js" afterPath="$PROJECT_DIR$/routes/ch1.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/appointment.ejs" afterPath="$PROJECT_DIR$/views/ch1.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/ch2.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/routes/ch1.js" afterPath="$PROJECT_DIR$/routes/ch_training.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -28,28 +28,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ch1.ejs" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ch2.ejs" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/ch2.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="345">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ch1.ejs" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/ch1.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1278" selection-end="1278" vertical-scroll-proportion="-18.791666" vertical-offset="119" max-vertical-offset="825">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="29" selection-start="933" selection-end="933" vertical-scroll-proportion="0.60240966" vertical-offset="320" max-vertical-offset="735">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ch1.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/ch1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="19" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+            <state line="19" column="25" selection-start="660" selection-end="660" vertical-scroll-proportion="0.42455244" vertical-offset="119" max-vertical-offset="825">
               <folding />
             </state>
           </provider>
@@ -71,9 +62,11 @@
         <option value="$PROJECT_DIR$/routes/appointment.js" />
         <option value="$PROJECT_DIR$/routes/todo.js" />
         <option value="$PROJECT_DIR$/views/more_data.ejs" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/appointment.ejs" />
+        <option value="$PROJECT_DIR$/routes/ch2.js" />
         <option value="$PROJECT_DIR$/routes/ch1.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/ch2.ejs" />
       </list>
     </option>
   </component>
@@ -271,7 +264,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287879" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287879" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -309,23 +302,30 @@
         <state line="72" column="12" selection-start="1528" selection-end="1528" vertical-scroll-proportion="1.3783133" vertical-offset="508" max-vertical-offset="1200" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/ch1.ejs">
+    <entry file="file://$PROJECT_DIR$/routes/ch_training.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1278" selection-end="1278" vertical-scroll-proportion="-18.791666" vertical-offset="119" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/ch1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+        <state line="9" column="19" selection-start="174" selection-end="174" vertical-scroll-proportion="0.3253012" vertical-offset="0" max-vertical-offset="415">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="29" selection-start="933" selection-end="933" vertical-scroll-proportion="0.60240966" vertical-offset="320" max-vertical-offset="735">
+        <state line="38" column="24" selection-start="941" selection-end="941" vertical-scroll-proportion="0.56626505" vertical-offset="335" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ch2.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ch1.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="25" selection-start="660" selection-end="660" vertical-scroll-proportion="0.42455244" vertical-offset="119" max-vertical-offset="825">
           <folding />
         </state>
       </provider>

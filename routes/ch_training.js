@@ -5,3 +5,7 @@
 exports.chapter1 = function(req, res) {
     res.render("ch1");
 };
+
+exports.chapter2 = function(req, res) {
+    res.render("ch2");
+};

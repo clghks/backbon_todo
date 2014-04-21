@@ -7,7 +7,7 @@ var express = require('express');
 var todo = require('./routes/todo');
 var http = require('http');
 var path = require('path');
-var ch1 = require('./routes/ch1');
+var training = require('./routes/ch_training');
 
 var app = express();
 
@@ -36,7 +36,8 @@ app.post('/todos', todo.insert);
 app.get('/todoData', todo.getTestOne);
 app.get('/todo', todo.index);
 
-app.get('/ch1', ch1.chapter1);
+app.get('/ch1', training.chapter1);
+app.get('/ch2', training.chapter2);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
