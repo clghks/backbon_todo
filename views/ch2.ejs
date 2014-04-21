@@ -5,14 +5,62 @@
     <title></title>
 </head>
 <body>
-    <div>
-        <input type="checkbox" data-id="1" />Test
-    </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
     <script>
+        // Appointment Model에 Default 를 만들어 보자.
+        var Appointment = Backbone.Model.extend({
+            defaults:{
+                description: 'Pick up milk',
+                status: 'incomplete'
+            }
+        });
 
+        var appointment = new Appointment({});
+        console.log(appointment.get('description'));
+
+        // Default 를 수정
+        appointment.set({
+            description: 'hi~~',
+            status: 'complete'
+        });
+        console.log(appointment.get('description'));
+
+        // URL 과 함께하는 Fetch
+        var Todo = Backbone.Model.extend({
+        });
+
+        var todo = new Todo({});
+        todo.url = '/todoData';
+        todo.fetch();
+
+        console.log(todo.get('description'));
+
+
+        var TodoItem = Backbone.Model.extend({
+            urlRoot:'/todos'
+        });
+
+        var todoItem = new TodoItem({id: 1});
+        todoItem.fetch();
+        console.log(todoItem.get('description'));
+
+        // 이벤트 등록(체인지 했을 때 alert 창이 열리도록 설정)
+        todoItem.on('change', function(){
+            alert('change~~');
+        });
+
+        // 특정 이벤트만 등록(cancelled)
+        // ???
+
+        // 변경된 것을 싱크하기
+        todoItem.set({description: 'hi~~~'});
+        todoItem.save();
+
+        // toJSON 을 이용해서 모델 데이터 가져오기.
+        console.log(todoItem.toJSON());
     </script>
 </body>
 </html>
+
