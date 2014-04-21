@@ -9,3 +9,7 @@ exports.chapter1 = function(req, res) {
 exports.chapter2 = function(req, res) {
     res.render("ch2");
 };
+
+exports.chapter3 = function(req, res) {
+    res.render("ch3");
+};
