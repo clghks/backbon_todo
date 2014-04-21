@@ -3,5 +3,5 @@
  */
 
 exports.chapter1 = function(req, res) {
-    res.render("appointment");
+    res.render("ch1");
 };
