@@ -33,10 +33,11 @@
 
         var todo = new Todo({});
         todo.url = '/todoData';
-        todo.fetch();
-
-        console.log(todo.get('description'));
-
+        todo.fetch({
+            success:function(){
+                console.log(todo.get('description'));
+            }
+        });
 
         var TodoItem = Backbone.Model.extend({
             urlRoot:'/todos'
@@ -52,7 +53,9 @@
         });
 
         // 특정 이벤트만 등록(cancelled)
-        // ???
+        todoItem.on('change name', function(){
+            alert('change~~');
+        });
 
         // 변경된 것을 싱크하기
         todoItem.set({description: 'hi~~~'});
