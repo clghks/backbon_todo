@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+    <script>
+        /*
+             1. 테그 변경하기 (기본 Div --> li)
+             2. 클래스 추가
+             3. render 리팩토리하기
+             4. 템플릿 이용하기
+             5. View에 이벤트 추가하기
+             6. 더 많은 이벤트 적용해보기
+        */
+
+        // 테그 변경하기 (기본 Div --> li)
+        var AppointmentView = Backbone.View.extend({
+            tagName: 'li'
+        });
+
+        var appointmentView = new AppointmentView({});
+        console.log(appointmentView.el);
+
+        // 클래스 추가
+        var AppointmentView1 = Backbone.View.extend({
+            tagName: 'li',
+            id: 'todo-view',
+            className: 'todo'
+
+        });
+
+        var appointmentView1 = new AppointmentView1({});
+        console.log(appointmentView1.el);
+
+        // render 리팩토리하기
+
+
+        // 템플릿 이용하기
+        var TempletView = Backbone.View.extend({
+            // ejs에서는 안됨 ㅜㅜ
+            template: _.template('<h3><%= description %></h3>'),
+            render: function(){
+                var attributes = this.model.toJSON();
+                this.$el.html(this.template(attributes));
+            }
+        });
+
+        var TempletItem = Backbone.Model.extend({
+
+        });
+
+        var templetItme = new TempletItem({
+            description: 'appointmentClass'
+        });
+
+        var templetView = new TempletView({
+            model: templetItme
+        });
+        templetView.render();
+        console.log(templetView.el);
+
+        // View에 이벤트 추가하기
+
+    </script>
+</body>
+</html>
+

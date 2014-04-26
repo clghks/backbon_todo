@@ -28,6 +28,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.get('/todos', todo.getAll);
 app.get('/todos/:id', todo.getOne);
 app.put('/todos/:id', todo.update);
 app.delete('/todos/:id', todo.delete);
@@ -39,6 +40,9 @@ app.get('/todo', todo.index);
 app.get('/ch1', training.chapter1);
 app.get('/ch2', training.chapter2);
 app.get('/ch3', training.chapter3);
+app.get('/ch4', training.chapter4);
+app.get('/ch5', training.chapter5);
+app.get('/ch6', training.chapter6);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

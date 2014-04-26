@@ -68,3 +68,7 @@ exports.index = function(req, res) {
 exports.getTestOne = function(req, res) {
   res.send(todos[0]);
 };
+
+exports.getAll = function(req, res){
+    res.send(todos);
+};
