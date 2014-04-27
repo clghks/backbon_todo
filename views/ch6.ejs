@@ -10,62 +10,124 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
     <script>
         /*
-             1. 테그 변경하기 (기본 Div --> li)
-             2. 클래스 추가
-             3. render 리팩토리하기
-             4. 템플릿 이용하기
-             5. View에 이벤트 추가하기
-             6. 더 많은 이벤트 적용해보기
+        var Appointment = Backbone.Model.extend({});
+
+        var AppointmentList = Backbone.Collection.extend({
+            model: Appointment
+        });
+
+
+        var appointments = new AppointmentList();
+
+        AppointmentListView 라는 것을 만들어서, 인스턴스를 하나 생성
+        model에 Collection을 추가해라
         */
+        var Appointment = Backbone.Model.extend({
 
-        // 테그 변경하기 (기본 Div --> li)
+        });
+
+        var AppointmentList = Backbone.Collection.extend({
+            model:Appointment
+        });
+
+        var AppointmentListView = Backbone.View.extend({
+
+        });
+
+        var appointmentList = new AppointmentList();
+        var json = [
+            {title: 'Back pain'},
+            {title: 'Dry mouth'},
+            {title: 'Headache'}
+        ];
+        appointmentList.reset(json);
+
+        var appointmentListView = new AppointmentListView({
+            collection: appointmentList
+        })
+        /*
+        2.
+
+        MODEL
+
+        var Appointment = Backbone.Model.extend({});
+
+        var AppointmentList = Backbone.Collection.extend({
+            model: Appointment
+        });
+
+        VIEW
+
         var AppointmentView = Backbone.View.extend({
-            tagName: 'li'
-        });
-
-        var appointmentView = new AppointmentView({});
-        console.log(appointmentView.el);
-
-        // 클래스 추가
-        var AppointmentView1 = Backbone.View.extend({
-            tagName: 'li',
-            id: 'todo-view',
-            className: 'todo'
-
-        });
-
-        var appointmentView1 = new AppointmentView1({});
-        console.log(appointmentView1.el);
-
-        // render 리팩토리하기
+            template: _.template('<span class="<%= if(cancelled) print("cancelled") %>">' +
+                    '<%= title %></span>' +
+                    '<a href="#">x</a>'),
 
 
-        // 템플릿 이용하기
-        var TempletView = Backbone.View.extend({
-            // ejs에서는 안됨 ㅜㅜ
-            template: _.template('<h3><%= description %></h3>'),
             render: function(){
-                var attributes = this.model.toJSON();
-                this.$el.html(this.template(attributes));
+                this.$el.html(this.template(this.model.toJSON()));
+                return this;
             }
         });
 
-        var TempletItem = Backbone.Model.extend({
+        var AppointmentListView = Backbone.View.extend({
+            render: function(){
+                this.collection.forEach(this.addOne);
+            },
+            addOne: function(model){
 
+            }
         });
 
-        var templetItme = new TempletItem({
-            description: 'appointmentClass'
+        AppointmentListView  각각의 모델을 랜더링하고, View의 top-level 에 추가할 수 있는
+        addOne 함수를 구현. 구현할 때 버그인 부분이 있는 해당 부분을 잘 찾아보세요~
+
+                3.
+
+        MODEL
+
+        var Appointment = Backbone.Model.extend({});
+
+        var AppointmentList = Backbone.Collection.extend({
+            model: Appointment
         });
 
-        var templetView = new TempletView({
-            model: templetItme
+        VIEWS
+
+        var AppointmentView = Backbone.View.extend({
+            template: _.template('<span class="<%= if(cancelled) print("cancelled") %>">' +
+                    '<%= title %></span>' +
+                    '<a href="#">x</a>'),
+
+
+            render: function(){
+                this.$el.html(this.template(this.model.toJSON()));
+                return this;
+            }
         });
-        templetView.render();
-        console.log(templetView.el);
 
-        // View에 이벤트 추가하기
 
+        var AppointmentListView = Backbone.View.extend({
+            render: function(){
+                this.collection.forEach(this.addOne, this);
+                return this;
+            },
+            addOne: function(model){
+                var appointmentView = new AppointmentView({model: model});
+                appointmentView.render()
+                this.$el.append(appointmentView.el);
+            }
+        });
+
+        var appointmentsView = new AppointmentListView({collection: appointmentList});
+
+        자 이젠 Collection을 jquery 를 이용해서 #app div에 추가해 봅시다.
+
+
+        4. 새로운 모델이 추가될 때 자동으로 랜더링 할 수 있는 함수 구현
+        5. Reset 이벤트에 대한 구현
+        6. 모델 삭제할 때 View에서는 hide 이벤트가 동작하도록 구현
+        */
     </script>
 </body>
 </html>
